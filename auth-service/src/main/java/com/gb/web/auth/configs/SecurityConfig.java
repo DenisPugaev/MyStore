@@ -36,7 +36,6 @@ public class SecurityConfig {
                 .requestMatchers("/cart/**").authenticated()
                 .requestMatchers("/admin/**").hasRole("ADMIN")
                 .requestMatchers("/orders/**").hasAnyRole("ADMIN","USER")
-                .requestMatchers("/cart/**").hasAnyRole("ADMIN","USER")
                 .anyRequest().permitAll()
                 .and()
                 .addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class)
